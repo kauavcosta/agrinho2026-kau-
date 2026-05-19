@@ -1,0 +1,17 @@
+/*Reset*/
+*{
+    margin:0; /*margem do body zerada*/
+    padding:0; /*espaço interno do body zerado*/
+}
+.cabecalho{
+    background-color: rgb(4, 168, 78);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.ul{
+    display: flex;
+    justify-content: space-between;
+}
