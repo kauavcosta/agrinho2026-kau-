@@ -4,14 +4,18 @@
     padding:0; /*espaço interno do body zerado*/
 }
 .cabecalho{
-    background-color: rgb(4, 168, 78);
-    display: flex;
+    background-color: rgb(7, 97, 47);
+    display:flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
 }
 
-.ul{
-    display: flex;
+ul{
+    display:flex;
     justify-content: space-between;
+}
+.cabecalho-item-lista{
+    padding:15px;
+    list-style-type: none;
 }
