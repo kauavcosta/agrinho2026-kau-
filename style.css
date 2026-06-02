@@ -4,7 +4,7 @@
     padding:0; /*espaço interno do body zerado*/
 }
 .cabecalho{
-    background-color: rgb(7, 97, 47);
+    background-color: rgb(6, 151, 71);
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -18,4 +18,16 @@ ul{
 .cabecalho-item-lista{
     padding:15px;
     list-style-type: none;
+}
+.conteudo-secao-sustentavel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    min-height: 80vh;
+    gap:30px;
+    
+}
+.conteudo-sustentavel-texto{
+    flex: 1;
 }
