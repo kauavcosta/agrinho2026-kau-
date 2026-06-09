@@ -1,51 +1,110 @@
-/*Reset*/
-*{
-    margin:0; /*margem do body zerada*/
-    padding:0; /*espaço interno do body zerado*/
+
+/* --- 1. VARIÁVEIS DE CORES (Modo Claro Padrão) --- */
+:root {
+    --bg-principal: #ffffff;
+    --bg-cabecalho: rgb(6, 151, 71);
+    --texto-principal: #000000;
+    --texto-secundario: #456d6d;
+    --bg-solucao: #ffffff;
+    --primary-color: #07a144; /* Corrigido para o botão */
 }
-.cabecalho{
-    background-color: rgb(6, 151, 71);
-    display:flex;
+
+/* --- 2. CORES DO MODO ESCURO --- */
+body.dark-mode {
+    --bg-principal: #121212;
+    --bg-cabecalho: #05411f; /* Verde mais escuro para não agredir os olhos */
+    --texto-principal: #ffffff;
+    --texto-secundario: #a0c0c0;
+    --bg-solucao: #1e1e1e;
+}
+
+/* --- 3. SEUS ESTILOS ADAPTADOS COM AS VARIÁVEIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita que paddings quebrem o layout */
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave na troca de cor */
+}
+
+.cabecalho {
+    background-color: var(--bg-cabecalho);
+    color: white;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    padding: 0 5%;
+    transition: background-color 0.3s ease;
 }
 
-ul{
-    display:flex;
+ul {
+    display: flex;
     justify-content: space-between;
 }
-.cabecalho-item-lista{
-    padding:15px;
+
+.cabecalho-item-lista {
+    padding: 15px;
     list-style-type: none;
+    cursor: pointer;
 }
-.conteudo-secao-sustentavel{
+
+/* Estilo básico para o seu botão de inversão */
+.cabecalho-titulo-inversao {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cabecalho-titulo-inversao:hover {
+    background-color: white;
+    color: var(--bg-cabecalho);
+}
+
+.conteudo-secao-sustentavel {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 60px 5%;
     min-height: 80vh;
-    gap:30px;
-
+    gap: 30px;
 }
-.conteudo-sustentavel-texto{
+
+.conteudo-sustentavel-texto {
     flex: 1;
 }
-.conteudo-sustentavel-titulo{
-    font-size:3rem;
-    color: black;
-    line-heigth: 1.2;
-    margin-botton 20px;
+
+.conteudo-sustentavel-titulo {
+    font-size: 3rem;
+    color: var(--texto-principal);
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
-.conteudo-sustentavel-paragrafo{
+
+.conteudo-sustentavel-titulo span {
+    color: #07a144; /* Mantém o "Verde" destacado */
+}
+
+.conteudo-sustentavel-paragrafo {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #456d6d;
+    color: var(--texto-secundario);
 }
-.sustentavel-botao{
-display: inline-block;
+
+.sustentavel-botao {
+    display: inline-block;
     background-color: var(--primary-color);
-    color: rgb(20, 58, 3);
+    color: white;
     text-decoration: none;
     padding: 15px 35px;
     border-radius: 30px;
@@ -54,23 +113,104 @@ display: inline-block;
     box-shadow: 0 4px 15px rgba(7, 161, 68, 0.4);
     transition: all 0.3s;
 }
+
 .conteudo-solucao {
-    display: block;
-    unicode-bidi: isolate;
-}
-.titulo-solucao{
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
+    padding: 60px 5%;
+    background-color: var(--bg-solucao);
 }
 
-.pagrafo-solucao{
-    display:block;
-    margin-block-start: 1em;
-    
+.titulo-solucao {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--texto-principal);
+}
+
+.paragrafo-solucao {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--texto-secundario);
+}
+
+.lista-solucoes {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.item-solucao {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.botao-simular {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-simular:hover {
+    background-color: #0056b3;
+}
+
+/* --- 4. RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Dispositivos Médios (Tablets - até 768px) */
+@media (max-width: 768px) {
+    .cabecalho {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    ul {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cabecalho-item-lista {
+        padding: 5px 10px;
+    }
+
+    .conteudo-secao-sustentavel {
+        flex-direction: column; /* Empilha o texto e a imagem verticalmente */
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .conteudo-sustentavel-titulo {
+        font-size: 2.2rem;
+    }
+
+    .conteudo-sustentavel-imagem {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .imagem-sustentavel {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Dispositivos Pequenos (Celulares - até 480px) */
+@media (max-width: 480px) {
+    .cabecalho-div-lista {
+        display: none; /* Esconde a lista do menu em celulares muito pequenos para poupar espaço */
+    }
+
+    .conteudo-sustentavel-titulo {
+        font-size: 1.8rem;
+    }
+
+    .sustentavel-botao, .botao-simular {
+        width: 100%; /* Botões ocupam a largura total na tela do celular */
+        text-align: center;
+    }
 }
