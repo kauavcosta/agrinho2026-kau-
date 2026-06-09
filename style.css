@@ -51,7 +51,26 @@ display: inline-block;
     border-radius: 30px;
     font-weight: bold;
     font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(12, 17, 14, 0.4);
+    box-shadow: 0 4px 15px rgba(7, 161, 68, 0.4);
     transition: all 0.3s;
 }
+.conteudo-solucao {
+    display: block;
+    unicode-bidi: isolate;
+}
+.titulo-solucao{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
 
+.pagrafo-solucao{
+    display:block;
+    margin-block-start: 1em;
+    
+}
